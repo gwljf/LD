@@ -39,6 +39,7 @@ public class Merge_Two_Sorted_Lists {
                 cur2 = cur2.next;
             }
             cur = cur.next;
+            cur.next = null;
         }
 
         if (cur1 != null) {
