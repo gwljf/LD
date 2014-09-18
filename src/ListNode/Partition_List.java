@@ -23,7 +23,7 @@ public class Partition_List {
         l1.next = l2;
         ListNode l = partition(l1,2);
         while (l!=null) {
-            System.out.println(l.val);
+            System.out.print(l.val+"->");
             l = l.next;
         }
 //        System.out.println(Linked_List_Cycle.hasCycle(l));
@@ -50,6 +50,7 @@ public class Partition_List {
                 cur2.next = null;
             }
         }
+
         cur1.next = dummyHead2.next;
         return dummyHead1.next;
     }
