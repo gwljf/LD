@@ -33,6 +33,7 @@ public class ListNode {
             }else {
                 System.out.print(cur.val+"->");
             }
+            cur = cur.next;
         }
     }
 }
