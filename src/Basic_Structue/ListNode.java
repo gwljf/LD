@@ -35,5 +35,6 @@ public class ListNode {
             }
             cur = cur.next;
         }
+        System.out.println();
     }
 }
