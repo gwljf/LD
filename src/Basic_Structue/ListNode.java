@@ -25,8 +25,8 @@ public class ListNode {
         return dummy.next;
     }
 
-    public static void print(ListNode head){
-        ListNode cur = head;
+    public void print(){
+        ListNode cur = this;
         while (cur!=null){
             if (cur.next==null){
                 System.out.print(cur.val+"");
