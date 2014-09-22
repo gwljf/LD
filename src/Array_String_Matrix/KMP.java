@@ -45,8 +45,8 @@ public class KMP {
 
     }
 
-    public static int KmpSearch(String s, String p, int[] next)
-    {
+    public static int KmpSearch(String s, String p, int[] next) {
+
         int i = 0;
         int j = 0;
         int sLen = s.length();
