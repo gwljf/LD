@@ -30,7 +30,7 @@ public class Insertion_Sort_List {
             cur = cur.next;
             tmp.next = null;
             while(true){
-                if(ncur==null){
+                if(ncur==null){             //用于插到队尾, 也是在插入第一个元素杜时候
                     pre.next = tmp;
                     break;
                 } else if (tmp.val>ncur.val) {
