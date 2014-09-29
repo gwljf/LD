@@ -26,7 +26,7 @@ public class Remove_Duplicates_from_Sorted_List {
             if (l1.val == l2.val) {
                 l1.next = l2.next;
             } else {
-                l1 = l1.next;
+                l1 = l1.next;       // 每次不等就直接跳
             }
             l2 = l2.next;
         }
