@@ -47,7 +47,7 @@ public class Reverse_Nodes_in_k_Group {
         ListNode next;
         ListNode nhead;
         while(cur!=null){
-            while(cur.next!=null && n<k){
+            while(cur.next!=null && n<k){       // cur.next!=null 因为想走到最后一个有元的点,而不是走到null
                 cur=cur.next;
                 ++n;
             }
@@ -57,7 +57,7 @@ public class Reverse_Nodes_in_k_Group {
                 nhead=reverse(pre.next);
 
                 pre.next=nhead;
-                while(nhead.next!=null){
+                while(nhead.next!=null){        // nhead.next!=null  都是意味着走到最后一个元素,而不是结尾的null
                     nhead=nhead.next;
                 }
                 nhead.next=next;
