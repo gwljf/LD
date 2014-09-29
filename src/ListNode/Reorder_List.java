@@ -28,7 +28,7 @@ public class Reorder_List {
         ListNode l1 = head, l2 = reSecond;
 
         ListNode dummyHead = new ListNode(-1);
-        ListNode cur = dummyHead;
+        ListNode cur = dummyHead;               // 构造链表的时候要有dummyhead,然后用next去往上加元素
         boolean isOdd = false;
 
         while (l1 != null && l2 != null) {
