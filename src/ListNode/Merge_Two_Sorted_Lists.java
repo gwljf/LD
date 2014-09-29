@@ -13,10 +13,7 @@ public class Merge_Two_Sorted_Lists {
 
         ListNode ret = mergeTwoLists(l1, l2);
 
-        while (ret!=null) {
-            System.out.print(ret.val+"->");
-            ret = ret.next;
-        }
+        ret.print();
     }
 
     public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
