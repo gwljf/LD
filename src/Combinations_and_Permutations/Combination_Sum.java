@@ -48,7 +48,7 @@ public class Combination_Sum {
         for (int i=curIndex; i<candidates.length; i++) {
             done.add(candidates[i]);
             curSum += candidates[i];
-            rec(ret, done, candidates, target, curIndex, curSum);
+            rec(ret, done, candidates, target, i, curSum);
             curSum -= candidates[i];
             done.remove(done.size()-1);
         }
