@@ -55,7 +55,7 @@ public class Remove_Duplicates_from_Sorted_List {
                 dup = true;
                 next = next.next;
             } else {
-                if (dup) {
+                if (dup) {              // 跳过去
                     pre.next = next;
                     cur = next;
                     next = next.next;
@@ -67,7 +67,7 @@ public class Remove_Duplicates_from_Sorted_List {
                 }
             }
         }
-        if (dup) {
+        if (dup) {                  // 防止结尾处有重复
             pre.next = next;
         }
         return dummyHead.next;
