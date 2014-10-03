@@ -18,33 +18,27 @@ public class Insertion_Sort_List {
         ret.print();
     }
     public static ListNode insertionSortList(ListNode head) {
-        if(head==null || head.next==null){
-            return head;
-        }
-        ListNode dummyHead = new ListNode(-1);
+        ListNode dummyhead = new ListNode(-1);
         ListNode cur = head;
-        ListNode pre = dummyHead;
-        ListNode ncur = pre.next;
+        ListNode pre = dummyhead;
         while(cur!=null){
             ListNode tmp = cur;
             cur = cur.next;
             tmp.next = null;
             while(true){
-                if(ncur==null){             //用于插到队尾, 也是在插入第一个元素杜时候
-                    pre.next = tmp;
+                if(pre.next==null){
+                    pre.next=tmp;
                     break;
-                } else if (tmp.val>ncur.val) {
-                    pre=pre.next;
-                    ncur=ncur.next;
+                } else if(tmp.val>pre.next.val){
+                    pre = pre.next;
                 } else {
+                    tmp.next = pre.next;
                     pre.next = tmp;
-                    tmp.next = ncur;
                     break;
                 }
             }
-            pre = dummyHead;
-            ncur = pre.next;
+            pre = dummyhead;
         }
-        return dummyHead.next;
+        return dummyhead.next;
     }
 }
