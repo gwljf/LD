@@ -6,66 +6,61 @@ import Basic_Structue.ListNode;
  * Created by wlf on 9/10/14.
  */
 public class Reorder_List {
-    public static void main(String[] args) {
+/*
 
-    }
+    Given a singly linked list L: L0→L1→…→Ln-1→Ln,
+    reorder it to: L0→Ln→L1→Ln-1→L2→Ln-2→…
+
+    You must do this in-place without altering the nodes' values.
+
+    For example,
+    Given {1,2,3,4}, reorder it to {1,4,2,3}.
+*/
 
     public static void reorderList(ListNode head) {
-        if (head==null || head.next==null){
+        if(head==null || head.next==null){
             return;
         }
-        ListNode fast = head;
-        ListNode slow = head;
-        ListNode firstEnd = head;
-
-        while (fast != null && fast.next != null) {
-            fast = fast.next.next;
+        ListNode fast=head, slow=head, firstEnd=head;
+        while(fast!=null && fast.next!=null){
+            fast=fast.next.next;
             firstEnd = slow;
             slow = slow.next;
         }
-        firstEnd.next = null;
-        ListNode reSecond = reverse(slow);
-        ListNode l1 = head, l2 = reSecond;
-
-        ListNode dummyHead = new ListNode(-1);
-        ListNode cur = dummyHead;               // 构造链表的时候要有dummyhead,然后用next去往上加元素
-        boolean isOdd = false;
-
-        while (l1 != null && l2 != null) {
-            if (isOdd) {
-                cur.next = l2;
-                l2 = l2.next;
-                isOdd = false;
-            } else {
-                cur.next = l1;
-                l1 = l1.next;
-                isOdd = true;
+        firstEnd.next=null;
+        ListNode first=head, second=reverse(slow);
+        ListNode dummyhead = new ListNode(-1);
+        ListNode cur = dummyhead;
+        boolean odd = true;
+        while(first!=null && second!=null){
+            if(odd){
+                cur.next = first;
+                first = first.next;
+                cur = cur.next;
+                cur.next = null;
+                odd = false;
+            }else{
+                cur.next = second;
+                second = second.next;
+                cur = cur.next;
+                cur.next = null;
+                odd = true;
             }
-            cur = cur.next;
         }
-        if (l2 != null) {
-            cur.next = l2;
-        }
-
-        head = dummyHead.next;
+        cur.next = second;
+        head = dummyhead.next;
     }
 
-    public static ListNode reverse (ListNode head) {
-        if (head == null || head.next == null) {
-            return head;
-        }
-
-        ListNode rehead = null;
+    public static ListNode reverse(ListNode head) {
+        ListNode nhead = null;
         ListNode cur = head;
-
-        while (cur != null) {
-            ListNode pre = cur;
+        while(cur!=null){
+            ListNode tmp = cur;
             cur = cur.next;
-            pre.next = rehead;
-            rehead = pre;
+            tmp.next = nhead;
+            nhead = tmp;
         }
-
-        return rehead;
+        return nhead;
     }
 
 }
