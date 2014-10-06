@@ -42,9 +42,6 @@ public class SubsetsII {
     }
 
     public static void rec(int[] S, List<List<Integer>> ret, List<Integer> done, int curIndex){
-        if(done.size() == S.length){
-            return;
-        }
         for(int i=curIndex; i<S.length; ++i){
             done.add(S[i]);
             ret.add(new ArrayList<Integer>(done));
