@@ -11,6 +11,8 @@ public class Rotate_Image {
 
     Follow up:
     Could you do this in-place?
+    顺时针:   上下交换,然后对角线交换
+    逆时针:   左右交换,然后对角线交换
   */
     public void rotate(int[][] matrix) {
         int len = matrix.length;
