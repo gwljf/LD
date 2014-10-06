@@ -5,9 +5,22 @@ package Array_String_Matrix;
  */
 public class Candy {
     public static void main (String[] args) {
-        int[] ratings = {1,2};
+        int[] ratings = {1,2,1};
         System.out.println(candy(ratings));
     }
+/*
+
+    There are N children standing in a line. Each child is assigned a rating value.
+
+    You are giving candies to these children subjected to the following requirements:
+
+    Each child must have at least one candy.
+    Children with a higher rating get more candies than their neighbors.
+
+    What is the minimum candies you must give?
+*/
+
+
 
     public static int candy(int[] ratings) {
         int len = ratings.length;
