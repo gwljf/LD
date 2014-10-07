@@ -31,8 +31,12 @@ public class Longest_Consecutive_Sequence {
         int maxLen = 0;
         for(int i=0; i<num.length; ++i){
             int cur = num[i];
+            if(!set.contains(cur)){
+                continue;
+            }
             int curLen = 1;
             int tmp = cur;
+            set.remove(tmp);
             while(set.contains(--tmp)){
                 curLen++;
                 set.remove(tmp);
