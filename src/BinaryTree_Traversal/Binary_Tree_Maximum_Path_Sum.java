@@ -12,6 +12,21 @@ public class Binary_Tree_Maximum_Path_Sum {
     }
 
     public static int maxPathSum(TreeNode root) {
+/*
+        Given a binary tree, find the maximum path sum.
+
+        The path may start and end at any node in the tree.
+
+        For example:
+        Given the below binary tree,
+
+                1
+                        / \
+        2   3
+
+        Return 6.
+*/
+
         int[] max = new int[1];
         max[0] = Integer.MIN_VALUE;
         rec(root, max);
