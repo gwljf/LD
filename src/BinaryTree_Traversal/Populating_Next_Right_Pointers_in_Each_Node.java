@@ -30,7 +30,7 @@ public class Populating_Next_Right_Pointers_in_Each_Node {
                     queue.offer(tmp.left);
                     nextLen++;
                 }
-                tmp.next = head;
+                tmp.next = head;                    // 头插法
                 head = tmp;
             }
             curLen = nextLen;
