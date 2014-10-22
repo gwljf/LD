@@ -23,7 +23,7 @@ public class Digits_before_first_0 {
         int num1 = 1204;
         int num2 = 12666003;
         int num3 = 120304;
-        int num4 = 1;
+        int num4 = -1030;
         System.out.println(numDigitsBeforeZero(num1));
         System.out.println(numDigitsBeforeZero(num2));
         System.out.println(numDigitsBeforeZero(num3));
