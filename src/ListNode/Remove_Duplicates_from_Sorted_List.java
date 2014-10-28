@@ -7,7 +7,6 @@ import Basic_Structue.ListNode;
  */
 
 
-
 public class Remove_Duplicates_from_Sorted_List {
 
     /*Given a sorted linked list, delete all duplicates such that each element appear only once.
@@ -17,7 +16,7 @@ public class Remove_Duplicates_from_Sorted_List {
         Given 1->1->2->3->3, return 1->2->3.
     */
     public ListNode deleteDuplicates(ListNode head) {
-        if (head==null || head.next==null) {
+        if (head == null || head.next == null) {
             return head;
         }
         ListNode l1 = head, l2 = head.next;
@@ -32,6 +31,7 @@ public class Remove_Duplicates_from_Sorted_List {
         }
         return head;
     }
+
     /*
         Given a sorted linked list, delete all nodes that have duplicate numbers, leaving only distinct numbers from the original list.
 
@@ -40,7 +40,7 @@ public class Remove_Duplicates_from_Sorted_List {
         Given 1->1->1->2->3, return 2->3.
     */
     public ListNode deleteDuplicates2(ListNode head) {
-        if (head==null || head.next==null) {
+        if (head == null || head.next == null) {
             return head;
         }
         ListNode dummyHead = new ListNode(-1);

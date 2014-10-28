@@ -18,15 +18,15 @@ public class Populating_Next_Right_Pointers_in_Each_Node {
         queue.offer(root);
         int curLen = 1;
         int nextLen = 0;
-        while(!queue.isEmpty()){
+        while (!queue.isEmpty()) {
             TreeLinkNode head = null;
-            for(int i=1; i<=curLen; i++){
+            for (int i = 1; i <= curLen; i++) {
                 TreeLinkNode tmp = queue.poll();
-                if(tmp.right!=null){
+                if (tmp.right != null) {
                     queue.offer(tmp.right);
                     nextLen++;
                 }
-                if(tmp.left!=null){
+                if (tmp.left != null) {
                     queue.offer(tmp.left);
                     nextLen++;
                 }

@@ -20,29 +20,29 @@ public class Longest_Consecutive_Sequence {
 
 
     public int longestConsecutive(int[] num) {
-        if (num.length==0) {
+        if (num.length == 0) {
             return 0;
         }
         Set<Integer> set = new HashSet<Integer>();
-        for(int ele:num){
+        for (int ele : num) {
             set.add(ele);
         }
 
         int maxLen = 0;
-        for(int i=0; i<num.length; ++i){
+        for (int i = 0; i < num.length; ++i) {
             int cur = num[i];
-            if(!set.contains(cur)){
+            if (!set.contains(cur)) {
                 continue;
             }
             int curLen = 1;
             int tmp = cur;
             set.remove(tmp);
-            while(set.contains(--tmp)){
+            while (set.contains(--tmp)) {
                 curLen++;
                 set.remove(tmp);
             }
             tmp = cur;
-            while(set.contains(++tmp)){
+            while (set.contains(++tmp)) {
                 curLen++;
                 set.remove(tmp);
             }

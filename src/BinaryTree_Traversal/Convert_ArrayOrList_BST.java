@@ -9,8 +9,8 @@ import java.util.List;
  * Created by wlf on 9/8/14.
  */
 public class Convert_ArrayOrList_BST {
-    public static void main (String[] args) {
-        int[] num = {1,2,3,4,5,6,7,8,9,10};
+    public static void main(String[] args) {
+        int[] num = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         ListNode n1 = new ListNode(1);
         ListNode n2 = new ListNode(2);
         ListNode n3 = new ListNode(3);
@@ -21,7 +21,15 @@ public class Convert_ArrayOrList_BST {
         ListNode n8 = new ListNode(8);
         ListNode n9 = new ListNode(9);
         ListNode n10 = new ListNode(10);
-        n1.next=n2; n2.next=n3; n3.next=n4; n4.next=n5; n5.next=n6; n6.next=n7; n7.next=n8; n8.next=n9; n9.next=n10;
+        n1.next = n2;
+        n2.next = n3;
+        n3.next = n4;
+        n4.next = n5;
+        n5.next = n6;
+        n6.next = n7;
+        n7.next = n8;
+        n8.next = n9;
+        n9.next = n10;
 
         TreeNode root1 = sortedArrayToBST(num);
         TreeNode root2 = sortedListToBST(n1);
@@ -32,16 +40,16 @@ public class Convert_ArrayOrList_BST {
     }
 
     public static TreeNode sortedArrayToBST(int[] num) {
-        return builArraydBST(num, 0, num.length-1);
+        return builArraydBST(num, 0, num.length - 1);
     }
 
-    public static TreeNode builArraydBST (int[] num, int start, int end) {
+    public static TreeNode builArraydBST(int[] num, int start, int end) {
         if (start > end) {
             return null;
         }
-        TreeNode node = new TreeNode(num[(start+end)/2]);
-        node.left = builArraydBST(num, start, (start+end)/2-1);
-        node.right = builArraydBST(num, (start+end)/2+1, end);
+        TreeNode node = new TreeNode(num[(start + end) / 2]);
+        node.left = builArraydBST(num, start, (start + end) / 2 - 1);
+        node.right = builArraydBST(num, (start + end) / 2 + 1, end);
         return node;
     }
 
@@ -49,15 +57,15 @@ public class Convert_ArrayOrList_BST {
         return buildListBST(head);
     }
 
-    public static TreeNode buildListBST (ListNode node) {
+    public static TreeNode buildListBST(ListNode node) {
         if (node == null) {
             return null;
         }
-        if(node.next==null){                        // very important
+        if (node.next == null) {                        // very important
             return new TreeNode(node.val);
         }
         ListNode fast = node, slow = node, firstEnd = node;
-        while (fast!=null && fast.next!=null) {
+        while (fast != null && fast.next != null) {
             fast = fast.next.next;
             firstEnd = slow;
             slow = slow.next;

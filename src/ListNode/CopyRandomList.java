@@ -7,7 +7,7 @@ import Basic_Structue.RandomListNode;
  * Created by wlf on 9/11/14.
  */
 public class CopyRandomList {
-    public static void main (String[] args) {
+    public static void main(String[] args) {
         RandomListNode l1 = new RandomListNode(1);
         RandomListNode l2 = new RandomListNode(2);
         RandomListNode l3 = new RandomListNode(3);
@@ -22,6 +22,7 @@ public class CopyRandomList {
     }
 
     public static RandomListNode copyRandomList(RandomListNode head) {
+        //
 //        if (head == null){
 //            return null;
 //        }
@@ -77,11 +78,10 @@ public class CopyRandomList {
         }
 
 
-
         cur = head;
 
         while (cur != null) {
-            cur.next.random = cur.random==null? null: cur.random.next;
+            cur.next.random = cur.random == null ? null : cur.random.next;
             cur = cur.next.next;
         }
 
@@ -90,7 +90,7 @@ public class CopyRandomList {
         while (cur != null) {
             copycur = cur.next;
             cur.next = copycur.next;
-            copycur.next = cur.next==null? null: cur.next.next;
+            copycur.next = cur.next == null ? null : cur.next.next;
             cur = cur.next;
         }
 

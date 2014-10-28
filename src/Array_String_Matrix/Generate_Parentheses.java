@@ -19,10 +19,10 @@ Given n pairs of parentheses, write a function to generate all combinations of w
 
 public class Generate_Parentheses {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         List<String> ret = new ArrayList<String>();
         ret = generateParenthesis(2);
-        for(String str:ret){
+        for (String str : ret) {
             System.out.println(str);
         }
     }
@@ -33,25 +33,25 @@ public class Generate_Parentheses {
         return ret;
     }
 
-    public static void generate(List<String> ret, int n, int left, int right, StringBuilder sb){
-        if(left<right){
+    public static void generate(List<String> ret, int n, int left, int right, StringBuilder sb) {
+        if (left < right) {
             return;
         }
-        if(left==n && right==n){
+        if (left == n && right == n) {
             ret.add(new String(sb.toString()));
             return;
         }
-        if(left==n){
+        if (left == n) {
             sb.append(")");
-            generate(ret, n, left, right+1, sb);
-            sb.delete(sb.length()-1, sb.length());
+            generate(ret, n, left, right + 1, sb);
+            sb.delete(sb.length() - 1, sb.length());
             return;
         }
         sb.append("(");
-        generate(ret, n, left+1, right, sb);
-        sb.delete(sb.length()-1, sb.length());
+        generate(ret, n, left + 1, right, sb);
+        sb.delete(sb.length() - 1, sb.length());
         sb.append(")");
-        generate(ret, n, left, right+1, sb);
-        sb.delete(sb.length()-1, sb.length());
+        generate(ret, n, left, right + 1, sb);
+        sb.delete(sb.length() - 1, sb.length());
     }
 }

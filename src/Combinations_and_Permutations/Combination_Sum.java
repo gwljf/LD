@@ -10,7 +10,6 @@ import java.util.List;
  */
 
 
-
 public class Combination_Sum {
 
 /*
@@ -34,7 +33,7 @@ public class Combination_Sum {
         List<Integer> done = new ArrayList<Integer>();
         Arrays.sort(candidates);                        // 因为第二个条件,所以必须先排序一下
         rec(ret, done, candidates, target, 0, 0);
-        return  ret;
+        return ret;
     }
 
     public static void rec(List<List<Integer>> ret, List<Integer> done, int[] candidates, int target, int curIndex, int curSum) {
@@ -45,12 +44,12 @@ public class Combination_Sum {
             ret.add(new ArrayList<Integer>(done));
             return;
         }
-        for (int i=curIndex; i<candidates.length; i++) {
+        for (int i = curIndex; i < candidates.length; i++) {
             done.add(candidates[i]);
             curSum += candidates[i];
             rec(ret, done, candidates, target, i, curSum);
             curSum -= candidates[i];
-            done.remove(done.size()-1);
+            done.remove(done.size() - 1);
         }
     }
 
@@ -87,14 +86,14 @@ public class Combination_Sum {
             ret.add(new ArrayList<Integer>(done));
             return;
         }
-        for (int i=curIndex; i<num.length; i++) {
+        for (int i = curIndex; i < num.length; i++) {
             done.add(num[i]);
             curSum += num[i];
-            rec1(ret, done, num, target, i+1, curSum);
+            rec1(ret, done, num, target, i + 1, curSum);
             curSum -= num[i];
-            done.remove(done.size()-1);
+            done.remove(done.size() - 1);
 
-            while (i+1 < num.length && num[i]==num[i+1]) {
+            while (i + 1 < num.length && num[i] == num[i + 1]) {
                 i++;
             }
         }

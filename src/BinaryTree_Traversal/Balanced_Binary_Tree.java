@@ -7,7 +7,7 @@ import Basic_Structue.TreeNode;
  */
 public class Balanced_Binary_Tree {
 
-    public static void main (String[] args) {
+    public static void main(String[] args) {
 
     }
 
@@ -19,7 +19,7 @@ public class Balanced_Binary_Tree {
         }
     }
 
-    public static int checkHeight (TreeNode node) {
+    public static int checkHeight(TreeNode node) {
         if (node == null) {
             return 0;
         }
@@ -31,10 +31,10 @@ public class Balanced_Binary_Tree {
         if (right == -1) {
             return -1;
         }
-        if (Math.abs(left-right)>1) {
+        if (Math.abs(left - right) > 1) {
             return -1;
         } else {
-            return Math.max(left,right)+1;          // 别忘了加一
+            return Math.max(left, right) + 1;          // 别忘了加一
         }
     }
 }

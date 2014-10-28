@@ -6,13 +6,13 @@ import Basic_Structue.TreeNode;
  * Created by wlf on 9/6/14.
  */
 public class Flatten_Binary_Tree_to_Linked_List {
-    public static void main (String[] args) {
+    public static void main(String[] args) {
         TreeNode root = generteTree();
         flatten(root);
 
         TreeNode tmp = root;
         while (tmp != null) {
-            System.out.print(tmp.val+"->");
+            System.out.print(tmp.val + "->");
             tmp = tmp.right;
         }
     }
@@ -49,7 +49,7 @@ public class Flatten_Binary_Tree_to_Linked_List {
         }
     }
 
-    public static TreeNode rec (TreeNode node) {
+    public static TreeNode rec(TreeNode node) {
         if (node.left == null && node.right == null) {
             return node;
         } else if (node.left == null) {
@@ -72,7 +72,7 @@ public class Flatten_Binary_Tree_to_Linked_List {
         }
     }
 
-    public static TreeNode generteTree () {
+    public static TreeNode generteTree() {
 //                 1
 //                / \
 //               2   5
@@ -85,8 +85,10 @@ public class Flatten_Binary_Tree_to_Linked_List {
         TreeNode t5 = new TreeNode(5);
         TreeNode t6 = new TreeNode(6);
 
-        t1.left = t2; t1.right = t5;
-        t2.left = t3; t2.right = t4;
+        t1.left = t2;
+        t1.right = t5;
+        t2.left = t3;
+        t2.right = t4;
         t5.right = t6;
 
         return t1;

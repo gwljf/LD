@@ -19,7 +19,7 @@ public class Digits_before_first_0 {
         output: 0
 */
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         int num1 = 1204;
         int num2 = 12666003;
         int num3 = 120304;
@@ -29,8 +29,9 @@ public class Digits_before_first_0 {
         System.out.println(numDigitsBeforeZero(num3));
         System.out.println(numDigitsBeforeZero(num4));
     }
+
     public static int numDigitsBeforeZero(int input) {
-        if(input==0){
+        if (input == 0) {
             return 0;
         }
         int inputValue = Math.abs(input);
@@ -39,14 +40,14 @@ public class Digits_before_first_0 {
         int tmp = inputValue;
         int count = 0;
         int digits = 0;
-        for(int i=inputLength-1; i>=0; --i){
-            int highestDigit = (tmp/Math.pow(10, i)==0) ? 0:(int)(tmp/Math.pow(10, i));
-            tmp = tmp - (tmp/(int)Math.pow(10, i)*(int)Math.pow(10, i));
-            if(highestDigit!=0){
+        for (int i = inputLength - 1; i >= 0; --i) {
+            int highestDigit = (tmp / Math.pow(10, i) == 0) ? 0 : (int) (tmp / Math.pow(10, i));
+            tmp = tmp - (tmp / (int) Math.pow(10, i) * (int) Math.pow(10, i));
+            if (highestDigit != 0) {
                 ++count;
-                digits = digits*10+highestDigit;
-            }else {
-                int result = count*(int)Math.pow(10, String.valueOf(digits).length())+digits;
+                digits = digits * 10 + highestDigit;
+            } else {
+                int result = count * (int) Math.pow(10, String.valueOf(digits).length()) + digits;
                 return result;
             }
         }

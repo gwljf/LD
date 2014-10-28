@@ -7,7 +7,7 @@ import Basic_Structue.ListNode;
  */
 public class Merge_Two_Sorted_Lists {
 
-    public static void main (String[] args) {
+    public static void main(String[] args) {
         ListNode l1 = new ListNode(2);
         ListNode l2 = new ListNode(1);
 

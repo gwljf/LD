@@ -17,13 +17,13 @@ import Basic_Structue.ListNode;
 
 public class Partition_List {
 
-    public static void main (String[] args) {
+    public static void main(String[] args) {
         ListNode l1 = new ListNode(2);
         ListNode l2 = new ListNode(1);
         l1.next = l2;
-        ListNode l = partition(l1,2);
-        while (l!=null) {
-            System.out.print(l.val+"->");
+        ListNode l = partition(l1, 2);
+        while (l != null) {
+            System.out.print(l.val + "->");
             l = l.next;
         }
 //        System.out.println(Linked_List_Cycle.hasCycle(l));
@@ -37,7 +37,7 @@ public class Partition_List {
 
         ListNode cur = head;
 
-        while (cur!=null) {
+        while (cur != null) {
             if (cur.val < x) {
                 cur1.next = cur;
                 cur = cur.next;

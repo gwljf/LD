@@ -18,28 +18,28 @@ public class Reorder_List {
 */
 
     public static void reorderList(ListNode head) {
-        if(head==null || head.next==null){
+        if (head == null || head.next == null) {
             return;
         }
-        ListNode fast=head, slow=head, firstEnd=head;
-        while(fast!=null && fast.next!=null){
-            fast=fast.next.next;
+        ListNode fast = head, slow = head, firstEnd = head;
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
             firstEnd = slow;
             slow = slow.next;
         }
-        firstEnd.next=null;
-        ListNode first=head, second=reverse(slow);
+        firstEnd.next = null;
+        ListNode first = head, second = reverse(slow);
         ListNode dummyhead = new ListNode(-1);
         ListNode cur = dummyhead;
         boolean odd = true;
-        while(first!=null && second!=null){
-            if(odd){
+        while (first != null && second != null) {
+            if (odd) {
                 cur.next = first;
                 first = first.next;
                 cur = cur.next;
                 cur.next = null;
                 odd = false;
-            }else{
+            } else {
                 cur.next = second;
                 second = second.next;
                 cur = cur.next;
@@ -54,7 +54,7 @@ public class Reorder_List {
     public static ListNode reverse(ListNode head) {
         ListNode nhead = null;
         ListNode cur = head;
-        while(cur!=null){
+        while (cur != null) {
             ListNode tmp = cur;
             cur = cur.next;
             tmp.next = nhead;

@@ -18,7 +18,7 @@ Given a linked list, swap every two adjacent nodes and return its head.
 public class Swap_Nodes_in_Pairs {
 
     public ListNode swapPairs(ListNode head) {
-        if(head==null){
+        if (head == null) {
             return null;
         }
         ListNode dummyhead = new ListNode(-1);
@@ -26,16 +26,16 @@ public class Swap_Nodes_in_Pairs {
         ListNode pre = dummyhead;
         ListNode cur = head;
         ListNode tmp;
-        while(cur!=null){
-            if(cur.next!=null){
-                tmp=cur.next;
-                cur.next=cur.next.next;
-                tmp.next=cur;
-                pre.next=tmp;
-                pre=pre.next.next;
-                cur=cur.next;
-            }else{
-                cur=cur.next;
+        while (cur != null) {
+            if (cur.next != null) {
+                tmp = cur.next;
+                cur.next = cur.next.next;
+                tmp.next = cur;
+                pre.next = tmp;
+                pre = pre.next.next;
+                cur = cur.next;
+            } else {
+                cur = cur.next;
             }
         }
         return dummyhead.next;

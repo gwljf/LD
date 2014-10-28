@@ -6,7 +6,7 @@ import Basic_Structue.ListNode;
  * Created by wlf on 9/11/14.
  */
 public class Linked_List_Cycle {
-    public static void main (String[] args) {
+    public static void main(String[] args) {
         ListNode circle = generateCircle();
         ListNode nonCircle = generateNonCircle();
 
@@ -17,14 +17,14 @@ public class Linked_List_Cycle {
     }
 
     public static boolean hasCycle(ListNode head) {
-        if (head==null || head.next==null){
+        if (head == null || head.next == null) {
             return false;
         }
         ListNode fast = head, slow = head;
-        while (fast!=null && fast.next!=null){
+        while (fast != null && fast.next != null) {
             fast = fast.next.next;
             slow = slow.next;
-            if (fast==slow){
+            if (fast == slow) {
                 return true;
             }
         }
@@ -37,7 +37,7 @@ public class Linked_List_Cycle {
         }
         boolean hasCircle = false;
         ListNode fast = head, slow = head;
-        while (fast!=null && fast.next!=null) {
+        while (fast != null && fast.next != null) {
             fast = fast.next.next;
             slow = slow.next;
             if (fast == slow) {
@@ -56,7 +56,7 @@ public class Linked_List_Cycle {
         return fast;
     }
 
-    public static ListNode generateCircle () {
+    public static ListNode generateCircle() {
         ListNode l1 = new ListNode(1);
         ListNode l2 = new ListNode(2);
         ListNode l3 = new ListNode(3);
@@ -66,7 +66,7 @@ public class Linked_List_Cycle {
         return l1;
     }
 
-    public static ListNode generateNonCircle () {
+    public static ListNode generateNonCircle() {
         ListNode l1 = new ListNode(1);
         ListNode l2 = new ListNode(2);
         ListNode l3 = new ListNode(3);

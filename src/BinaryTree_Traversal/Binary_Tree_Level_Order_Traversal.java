@@ -34,7 +34,7 @@ public class Binary_Tree_Level_Order_Traversal {
     public List<List<Integer>> levelOrderBottom(TreeNode root) {
         List<List<Integer>> ret = new ArrayList<List<Integer>>();
         List<Integer> done = new ArrayList<Integer>();
-        if(root==null){
+        if (root == null) {
             return ret;
         }
 
@@ -43,14 +43,14 @@ public class Binary_Tree_Level_Order_Traversal {
         queue.offer(root);
         int curLen = 1;
         int nextLen = 0;
-        while(!queue.isEmpty()){
-            for(int i=1; i<=curLen; ++i){
+        while (!queue.isEmpty()) {
+            for (int i = 1; i <= curLen; ++i) {
                 TreeNode tmp = queue.poll();
-                if(tmp.left!=null){
+                if (tmp.left != null) {
                     queue.offer(tmp.left);
                     nextLen++;
                 }
-                if(tmp.right!=null){
+                if (tmp.right != null) {
                     queue.offer(tmp.right);
                     nextLen++;
                 }
@@ -61,7 +61,7 @@ public class Binary_Tree_Level_Order_Traversal {
             curLen = nextLen;
             nextLen = 0;
         }
-        while(!stack.isEmpty()){
+        while (!stack.isEmpty()) {
             ret.add(stack.pop());
         }
         return ret;

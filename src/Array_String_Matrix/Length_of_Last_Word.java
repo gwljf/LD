@@ -18,19 +18,19 @@ public class Length_of_Last_Word {
 */
 
     public int lengthOfLastWord(String s) {
-        if(s.length()==0){
+        if (s.length() == 0) {
             return 0;
         }
-        int end = s.length()-1;
-        while (s.charAt(end)==' '){
-            if (--end<0){
+        int end = s.length() - 1;
+        while (s.charAt(end) == ' ') {
+            if (--end < 0) {
                 return 0;
             }
         }
         int length = 0;
-        while (s.charAt(end)!=' '){
+        while (s.charAt(end) != ' ') {
             ++length;
-            if (--end<0){
+            if (--end < 0) {
                 break;
             }
         }

@@ -20,20 +20,20 @@ public class Valid_Palindrome {
 
 
     public boolean isPalindrome(String s) {
-        if(s.length()==0 || s.length()==1){
+        if (s.length() == 0 || s.length() == 1) {
             return true;
         }
-        int low = 0, high = s.length()-1;
-        while(low<high){
-            while(low<high && !Character.isLetterOrDigit(s.charAt(low))){
+        int low = 0, high = s.length() - 1;
+        while (low < high) {
+            while (low < high && !Character.isLetterOrDigit(s.charAt(low))) {
                 low++;
             }
-            while(low<high && !Character.isLetterOrDigit(s.charAt(high))){
+            while (low < high && !Character.isLetterOrDigit(s.charAt(high))) {
                 high--;
             }
-            if(Character.toLowerCase(s.charAt(low))!=Character.toLowerCase(s.charAt(high))){
+            if (Character.toLowerCase(s.charAt(low)) != Character.toLowerCase(s.charAt(high))) {
                 return false;
-            }else{
+            } else {
                 low++;
                 high--;
             }

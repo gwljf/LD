@@ -34,7 +34,7 @@ public class Subsets {
     public static List<List<Integer>> subsets(int[] S) {
         List<List<Integer>> ret = new ArrayList<List<Integer>>();
         List<Integer> done = new ArrayList<Integer>();
-        if(S.length==0){
+        if (S.length == 0) {
             return ret;
         }
         Arrays.sort(S);
@@ -43,15 +43,14 @@ public class Subsets {
         return ret;
     }
 
-    public static void rec(int[] S, List<List<Integer>> ret, List<Integer> done, int curIndex){
-        for(int i=curIndex; i<S.length; ++i){
+    public static void rec(int[] S, List<List<Integer>> ret, List<Integer> done, int curIndex) {
+        for (int i = curIndex; i < S.length; ++i) {
             done.add(S[i]);
             ret.add(new ArrayList<Integer>(done));
-            rec(S, ret, done, i+1);
-            done.remove(done.size()-1);
+            rec(S, ret, done, i + 1);
+            done.remove(done.size() - 1);
         }
     }
-
 
 
 }

@@ -9,7 +9,7 @@ import java.util.List;
  * Created by wlf on 9/7/14.
  */
 public class Path_Sum {
-    public static void main (String[] args) {
+    public static void main(String[] args) {
         TreeNode root = generateTree();
 
         System.out.println(hasPathSum(root, 22));
@@ -39,7 +39,7 @@ public class Path_Sum {
         }
     }
 
-    public static boolean rec (TreeNode node, int sum, int tmpVal) {
+    public static boolean rec(TreeNode node, int sum, int tmpVal) {
         tmpVal += node.val;
         if (node.left == null && node.right == null) {
             if (tmpVal == sum) {
@@ -56,7 +56,7 @@ public class Path_Sum {
         }
     }
 
-    public static void rec (List<List<Integer>> ret, List<Integer> al, TreeNode node, int sum, int tmpVal) {
+    public static void rec(List<List<Integer>> ret, List<Integer> al, TreeNode node, int sum, int tmpVal) {
         tmpVal += node.val;
         al.add(node.val);
         if (node.left == null && node.right == null) {
@@ -72,10 +72,10 @@ public class Path_Sum {
             rec(ret, al, node.right, sum, tmpVal);
         }
         tmpVal -= node.val;
-        al.remove(al.size()-1);
+        al.remove(al.size() - 1);
     }
 
-    public static TreeNode generateTree () {
+    public static TreeNode generateTree() {
 //                 5
 //                / \
 //               4   8
@@ -93,9 +93,14 @@ public class Path_Sum {
         TreeNode t2 = new TreeNode(2);
         TreeNode t1 = new TreeNode(1);
 
-        t5.left = t4; t5.right = t8;
-        t4.left = t11; t8.left = t13; t8.right = t41;
-        t11.left = t7; t11.right = t2; t41.right = t1;
+        t5.left = t4;
+        t5.right = t8;
+        t4.left = t11;
+        t8.left = t13;
+        t8.right = t41;
+        t11.left = t7;
+        t11.right = t2;
+        t41.right = t1;
 
         return t5;
 

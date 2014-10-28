@@ -24,51 +24,52 @@ public class Letter_Combinations_of_a_Phone_Number {
         rec(ret, digits, new StringBuilder(), 0);
         return ret;
     }
-    public void rec(List<String> ret, String digits, StringBuilder sb, int index){
-        if(index==digits.length()){
+
+    public void rec(List<String> ret, String digits, StringBuilder sb, int index) {
+        if (index == digits.length()) {
             ret.add(new String(sb));
             return;
         }
         List<Character> list = getChar(digits.charAt(index));
-        for(int i=0; i<list.size(); ++i){
+        for (int i = 0; i < list.size(); ++i) {
             sb.append(list.get(i));
-            rec(ret, digits, sb, index+1);
-            sb.delete(sb.length()-1, sb.length());
+            rec(ret, digits, sb, index + 1);
+            sb.delete(sb.length() - 1, sb.length());
         }
     }
 
-    public List<Character> getChar(Character number){
+    public List<Character> getChar(Character number) {
         List<Character> ret = new ArrayList<Character>();
-        if(number=='2'){
+        if (number == '2') {
             ret.add('a');
             ret.add('b');
             ret.add('c');
-        }else if(number=='3'){
+        } else if (number == '3') {
             ret.add('d');
             ret.add('e');
             ret.add('f');
-        }else if(number=='4'){
+        } else if (number == '4') {
             ret.add('g');
             ret.add('h');
             ret.add('i');
-        }else if(number=='5'){
+        } else if (number == '5') {
             ret.add('j');
             ret.add('k');
             ret.add('l');
-        }else if(number=='6'){
+        } else if (number == '6') {
             ret.add('m');
             ret.add('n');
             ret.add('o');
-        }else if(number=='7'){
+        } else if (number == '7') {
             ret.add('p');
             ret.add('q');
             ret.add('r');
             ret.add('s');
-        }else if(number=='8'){
+        } else if (number == '8') {
             ret.add('t');
             ret.add('u');
             ret.add('v');
-        }else if(number=='9'){
+        } else if (number == '9') {
             ret.add('w');
             ret.add('x');
             ret.add('y');

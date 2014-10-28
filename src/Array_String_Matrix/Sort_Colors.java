@@ -12,25 +12,25 @@ public class Sort_Colors {
 */
 
     public void sortColors(int[] A) {
-        if(A.length==0){
+        if (A.length == 0) {
             return;
         }
-        int p1=0, p2=A.length-1, i=0;
-        while(i<=p2){
-            if(A[i]==1){
+        int p1 = 0, p2 = A.length - 1, i = 0;
+        while (i <= p2) {
+            if (A[i] == 1) {
                 i++;
-            }else if(A[i]==0){
-                swap(A,p1,i);
+            } else if (A[i] == 0) {
+                swap(A, p1, i);
                 p1++;
                 i++;
-            }else if(A[i]==2){
-                swap(A,i,p2);
+            } else if (A[i] == 2) {
+                swap(A, i, p2);
                 p2--;
             }
         }
     }
 
-    public void swap(int[] A, int i, int j){
+    public void swap(int[] A, int i, int j) {
         int tmp = A[i];
         A[i] = A[j];
         A[j] = tmp;

@@ -32,7 +32,7 @@ public class SubsetsII {
     public List<List<Integer>> subsetsWithDup(int[] num) {
         List<List<Integer>> ret = new ArrayList<List<Integer>>();
         List<Integer> done = new ArrayList<Integer>();
-        if(num.length==0){
+        if (num.length == 0) {
             return ret;
         }
         Arrays.sort(num);
@@ -41,13 +41,13 @@ public class SubsetsII {
         return ret;
     }
 
-    public static void rec(int[] S, List<List<Integer>> ret, List<Integer> done, int curIndex){
-        for(int i=curIndex; i<S.length; ++i){
+    public static void rec(int[] S, List<List<Integer>> ret, List<Integer> done, int curIndex) {
+        for (int i = curIndex; i < S.length; ++i) {
             done.add(S[i]);
             ret.add(new ArrayList<Integer>(done));
-            rec(S, ret, done, i+1);
-            done.remove(done.size()-1);
-            while(i+1<S.length&&S[i]==S[i+1]){
+            rec(S, ret, done, i + 1);
+            done.remove(done.size() - 1);
+            while (i + 1 < S.length && S[i] == S[i + 1]) {
                 i++;
             }
         }

@@ -6,7 +6,7 @@ import Basic_Structue.TreeNode;
  * Created by wlf on 9/6/14.
  */
 public class Valid_BST {
-    public static void main (String[] args) {
+    public static void main(String[] args) {
         TreeNode root = generateBST();
         System.out.println(isValidBST(root));
         root = generateNonBST();
@@ -21,9 +21,9 @@ public class Valid_BST {
         return check(node, Integer.MIN_VALUE, Integer.MAX_VALUE);
     }
 
-    public static boolean check (TreeNode node, int min, int max) {
+    public static boolean check(TreeNode node, int min, int max) {
         if (node == null) {
-            return  true;
+            return true;
         } else if (node.val <= min || node.val >= max) {
             return false;
         } else {
@@ -31,7 +31,7 @@ public class Valid_BST {
         }
     }
 
-    public static TreeNode generateBST () {
+    public static TreeNode generateBST() {
         TreeNode t1 = new TreeNode(1);
         TreeNode t2 = new TreeNode(2);
         TreeNode t3 = new TreeNode(3);
@@ -49,13 +49,20 @@ public class Valid_BST {
 //                  3                     9
 //             2           5      7               10
 //            1          4           8               11
-        t6.left = t3; t6.right = t9;
-        t3.left = t2; t3.right = t5;    t9.left = t7; t9.right = t0;
-        t2.left = t1; t5.left = t4;     t7.right = t8; t0.right = t11;
-        return  t6;
-     }
+        t6.left = t3;
+        t6.right = t9;
+        t3.left = t2;
+        t3.right = t5;
+        t9.left = t7;
+        t9.right = t0;
+        t2.left = t1;
+        t5.left = t4;
+        t7.right = t8;
+        t0.right = t11;
+        return t6;
+    }
 
-    public static TreeNode generateNonBST () {
+    public static TreeNode generateNonBST() {
         TreeNode t1 = new TreeNode(1);
         TreeNode t2 = new TreeNode(2);
         TreeNode t3 = new TreeNode(3);
@@ -73,9 +80,16 @@ public class Valid_BST {
 //                  3                     9
 //             2           5      7               10
 //            1          4           8          11
-        t6.left = t3; t6.right = t9;
-        t3.left = t2; t3.right = t5;    t9.left = t7; t9.right = t0;
-        t2.left = t1; t5.left = t4;     t7.right = t8; t0.left = t11;
-        return  t6;
+        t6.left = t3;
+        t6.right = t9;
+        t3.left = t2;
+        t3.right = t5;
+        t9.left = t7;
+        t9.right = t0;
+        t2.left = t1;
+        t5.left = t4;
+        t7.right = t8;
+        t0.left = t11;
+        return t6;
     }
 }
