@@ -11,6 +11,7 @@ O(lg(n)) extra space
 O(n^2)time, but typically O(n lg(n)) time
 */
 
+
     public static void quickSort(int[] a, int p, int r){
         if(p<r){
             int q = partition(a, p, r);
@@ -38,5 +39,4 @@ O(n^2)time, but typically O(n lg(n)) time
         a[j] = a[i];
         a[i] = tmp;
     }
-
 }
